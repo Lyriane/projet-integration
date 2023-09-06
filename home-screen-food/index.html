@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Home screen food delivery</title>
+    <style>
+        .no-scrollbar::-webkit-scrollbar {display: none;}
+    </style>
+</head>
+<body class="flex bg-[#FFB046] h-screen overflow-hidden">
+
+    <!-- SIDEBAR-->
+    <div class="h-full w-32 h-screen fixed flex flex-col bg-[#FFB046] justify-between text-center py-10 overflow-y-auto">
+            <button class="m-auto w-16 h-16 bg-white rounded-xl">
+                <img src="/home-screen-food/icons/wok icon.JPG" class="p-1 w-50 h-50"> 
+                <p class="text-white text-xl pt-2">Wok</p>
+            </button>
+
+            <button class="m-auto w-16 h-16 bg-white rounded-xl">
+                <img src="/home-screen-food/icons/sushi icon.JPG" class="p-1 w-50 h-50"> 
+                <p class="text-white text-xl pt-2">Sushi</p>
+            </button>      
+            
+            <button class="m-auto w-16 h-16 bg-white rounded-xl">
+                <img src="/home-screen-food/icons/icon pizza.JPG" class="p-1 w-50 h-50"> 
+                <p class="text-white text-xl pt-2">Pizza</p>
+            </button>
+
+            <button class="m-auto w-16 h-16 bg-white rounded-xl">
+                <img src="/home-screen-food/icons/steack icon.jpg" class="p-1 w-50 h-50"> 
+                <p class="text-white text-xl pt-2">Steak</p>
+            </button>
+
+            <button class="m-auto w-16 h-16 bg-white rounded-xl">
+                <img src="/home-screen-food/icons/desert icon.jpg" class="p-1 w-50 h-50"> 
+                <p class="text-white text-xl pt-2">Desert</p>
+            </button>
+
+            <button class="m-auto w-16 h-16 bg-white rounded-xl">
+                <img src="/home-screen-food/icons/salad icon.jpg" class="p-1 w-50 h-50"> 
+                <p class="text-white text-xl pt-2">Salad</p>
+            </button>
+
+            <button class="m-auto w-16 h-16 bg-white rounded-xl">
+                <img src="/home-screen-food/icons/soup icon.jpg" class="p-1 w-50 h-50"> 
+                <p class="text-white text-xl pt-2">Soup</p>
+            </button>
+
+            <button class="m-auto w-16 h-16 bg-white rounded-xl">
+                <img src="/home-screen-food/icons/burger icon.jpg" class="p-1 w-50 h-50"> 
+                <p class="text-white text-xl pt-2">Burger</p>
+            </button>
+
+            <button class="m-auto w-16 h-16 bg-white rounded-xl">
+                <img src="/home-screen-food/icons/sandwich icon.jpg" class="p-1 w-50 h-50"> 
+                <p class="text-white text-xl pt-2">Sandwich</p>
+            </button>
+    </div>
+
+    <!--CONTAINER-->
+    <div class="w-full h-full flex flex-row rounded-l-3xl bg-white gap-16 ml-32 p-16 pb-0 overflow-hidden">
+        <!--LEFT SIDE-->
+        <div class="basis-2/3 overflow-y-auto pb-10 no-scrollbar">
+            <!--search bar-->       
+            <div class="flex items-center relative">
+                <svg class="absolute left-8 stroke-gray-300" width="30" height="30" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M10 17C13.866 17 17 13.866 17 10C17 6.13401 13.866 3 10 3C6.13401 3 3 6.13401 3 10C3 13.866 6.13401 17 10 17Z" stroke="#4B5563" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"></path>
+                    <path d="M21 21L15 15" stroke="#4B5563" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+                <input class="text-2xl leading-none text-left text-gray-300 pl-20 py-6 rounded-[30px] w-1/2 bg-[#E6E6E8]" type="text" placeholder="Search by dish or restaurant"/>
+            </div>
+
+            <!--info-->
+            <div class="flex bg-[#E6E6E8] rounded-[30px] overflow-hidden my-10">
+                <div class="flex flex-col justify-evenly items-start w-1/2 p-10">
+                    <p class="leading-relaxed text-5xl text-black font-semibold whitespace-pre-line">Hello, Gloria.
+                    What would you like to eat?
+                    </p>
+                    <p class="text-2xl text-black text-left whitespace-pre-line">The best for today is a tomato salad with mozzarella chesse.
+                    A light salad with herbs is the perfect dish for brunch!</p>
+                </div>
+                <div class="h-96 w-1/2 overflow-hidden relative">
+                        <img src="/home-screen-food/pictures/pexels-photo-61180.jpeg" class="top-0 -right-24 absolute"/>
+                </div>
+            </div> 
+
+            <!--favorite dishes-->            
+            <h1 class="text-4xl text-black font-semibold py-6">Your favorite dishes</h1>
+            <div class="grid grid-cols-3 gap-4">                    
+                <div class="grid gap-4 relative">
+                    <div class="basis-4/5 rounded-[2rem] overflow-hidden">
+                        <img class="h-full w-full object-cover " src="/home-screen-food/pictures/egg.jpg" alt=""/>
+                        <div class=" absolute top-0 right-0 bg-gray-500/75 rounded-tr-[2rem] rounded-bl-[2rem] p-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-plus stroke-white" width="40" height="40" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                <path d="M12 5l0 14"></path>
+                                <path d="M5 12l14 0"></path>
+                            </svg>
+                        </div>                            
+                    </div>
+                    <div class="rounded-[2rem] overflow-hidden relative">
+                        <img class="h-full w-full object-cover" src="/home-screen-food/pictures//pastabolo.jpg" alt="">
+                        <div class=" absolute top-0 right-0 bg-gray-500/75 rounded-tr-[2rem] rounded-bl-[2rem] p-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-plus stroke-white" width="40" height="40" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                <path d="M12 5l0 14"></path>
+                                <path d="M5 12l14 0"></path>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="basis-4/5 rounded-[2rem] overflow-hidden relative">
+                        <img class="h-full w-full object-cover" src="/home-screen-food/pictures/extgsecg.jpeg" alt="">
+                        <div class=" absolute top-0 right-0 bg-gray-500/75 rounded-tr-[2rem] rounded-bl-[2rem] p-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-plus stroke-white" width="40" height="40" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                <path d="M12 5l0 14"></path>
+                                <path d="M5 12l14 0"></path>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid gap-4">
+                    <div class="basis-4/5 rounded-[2rem] overflow-hidden relative">
+                        <img class="h-full w-full object-cover" src="/home-screen-food/pictures/dessert.jpeg" alt=""/>
+                        <div class=" absolute top-0 right-0 bg-gray-500/75 rounded-tr-[2rem] rounded-bl-[2rem] p-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-plus stroke-white" width="40" height="40" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                <path d="M12 5l0 14"></path>
+                                <path d="M5 12l14 0"></path>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="basis-4/5 rounded-[2rem] overflow-hidden relative">
+                        <img class="h-full w-full object-cover" src="/home-screen-food/pictures/pexels-photo-61180.jpeg" alt="">
+                        <div class=" absolute top-0 right-0 bg-gray-500/75 rounded-tr-[2rem] rounded-bl-[2rem] p-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-plus stroke-white" width="40" height="40" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                <path d="M12 5l0 14"></path>
+                                <path d="M5 12l14 0"></path>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="basis-4/5 rounded-[2rem] overflow-hidden relative">
+                        <img class="h-full w-full object-cover" src="/home-screen-food/pictures/soupe.jpg" alt="">
+                        <div class=" absolute top-0 right-0 bg-gray-500/75 rounded-tr-[2rem] rounded-bl-[2rem] p-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-plus stroke-white" width="40" height="40" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                <path d="M12 5l0 14"></path>
+                                <path d="M5 12l14 0"></path>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid gap-4">
+                    <div class="basis-4-5 rounded-[2rem] overflow-hidden relative">
+                        <img class="h-full w-full object-cover" src="/home-screen-food/pictures/sushi.jpg" alt="">
+                        <div class=" absolute top-0 right-0 bg-gray-500/75 rounded-tr-[2rem] rounded-bl-[2rem] p-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-plus stroke-white" width="40" height="40" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                <path d="M12 5l0 14"></path>
+                                <path d="M5 12l14 0"></path>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="rounded-[2rem] overflow-hidden relative">
+                        <img class="h-full w-full object-cover" src="/home-screen-food/pictures/hgubvgf.jpeg" alt="">
+                        <div class=" absolute top-0 right-0 bg-gray-500/75 rounded-tr-[2rem] rounded-bl-[2rem] p-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-plus stroke-white" width="40" height="40" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                <path d="M12 5l0 14"></path>
+                                <path d="M5 12l14 0"></path>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="basis-4/5 rounded-[2rem] overflow-hidden relative">
+                        <img class="h-full w-full object-cover" class="rotate-90" src="/home-screen-food/pictures/tomatoes.jpeg" alt="">
+                        <div class=" absolute top-0 right-0 bg-gray-500/75 rounded-tr-[2rem] rounded-bl-[2rem] p-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-plus stroke-white" width="40" height="40" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                <path d="M12 5l0 14"></path>
+                                <path d="M5 12l14 0"></path>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--RIGHT SIDE-->
+        <div class="basis-1/3">
+            <!--user/heart-->
+            <div class="flex justify-between items-center mb-8">
+                <div class="flex items-center gap-10">
+                    <img class="rounded-full w-20 h-20 object-cover" src="/home-screen-food/pictures/userrandom.jpeg"/>
+                    <h1 class="text-4xl text-black font-semibold">Gloria Henderson</h1>
+                </div>
+                
+                <div class="rounded-2xl bg-[#FB6E37] flex justify-center w-20 h-20">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-heart stroke-white my-auto" width="40" height="40" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                        <path d="M19.5 12.572l-7.5 7.428l-7.5 -7.428a5 5 0 1 1 7.5 -6.566a5 5 0 1 1 7.5 6.572"></path>
+                    </svg>
+                </div>
+            </div>
+
+            <!--cart-->
+            <div class="flex flex-col justify-evenly rounded-2xl bg-[#5E39C7] px-16 divide-y-2 divide-white/25 py-12">
+                <!--title + product list-->
+                <div class="flex flex-col gap-10 pb-10">
+                    <div class="flex justify-between items-center py-4">
+                        <h1 class="text-4xl text-white font-semibold">Cart</h1>
+                        <buton class="text-2xl text-white/50">Remove all</button>
+                    </div>
+                    
+                    <div class="flex justify-between items-center">
+                        <div class="flex justify-evenly items-center gap-10">
+                            <div class="w-20 h-20 rounded-2xl overflow-hidden">
+                                <img class="h-full w-full object-cover" src="/home-screen-food/pictures/tomatoes.jpeg" alt="">
+                            </div>
+                            <p class="text-2xl text-white/50">2 x</p> 
+                            <p class="text-2xl text-white">Avocado Salad</p>
+                        </div>
+                        <p class="text-3xl text-white">$ 10.00</p>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <div class="flex justify-evenly items-center gap-10">
+                            <div class="w-20 h-20 rounded-2xl overflow-hidden">
+                                <img class="h-full w-full object-cover" src="/home-screen-food/pictures/sandwich.jpg" alt="">
+                            </div>
+                            <p class="text-2xl text-white/50">1 x</p> 
+                            <p class="text-2xl text-white">Sandwich</p>
+                        </div>
+                        <p class="text-3xl text-white">$ 3.00</p>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <div class="flex justify-evenly items-center gap-10">
+                            <div class="w-20 h-20 rounded-2xl overflow-hidden">
+                                <img class="h-full w-full object-cover" src="/home-screen-food/pictures/coffee.jpeg" alt="">
+                            </div>
+                            <p class="text-2xl text-white/50">1 x</p> 
+                            <p class="text-2xl text-white">Coffee</p>
+                        </div>
+                        <p class="text-3xl text-white">$ 2.00</p>
+                    </div>                                        
+                </div>
+
+                <!--promo code-->
+                <div class="py-8">
+                    <p class="text-2xl text-white">Promo code</p>
+                    <input class="text-2xl text-white/25 bg-[#5E39C7] w-full" type="text" placeholder="Enter the promo code and get a discount.">
+                </div>                         
+
+                <!--delivery cost-->
+                <div class="py-8">
+                    <div class="flex justify-between">
+                        <p class="text-2xl text-white">Delivery cost</p>                   
+                        <p class="text-3xl text-white">$ 2.00</p>
+                    </div>
+                    <p class="text-2xl text-white/25">Add orders of $10 for free delivery.</p>
+                </div>             
+                
+                <!--total-->
+                <div class="flex justify-between pt-10">
+                    <p class="text-3xl text-white font-semibold">Total</p>
+                    
+                    <span class="flex gap-1">
+                        <p class="text-2xl -top-0.5 text-white/75">$</p>
+                        <p class="text-4xl text-white font-semibold">15.00</p>
+                    </span>
+                </div>
+            </div>
+
+            <!--delivery time-->            
+            <div class="flex flex-col gap-10 justify-around rounded-2xl bg-[#1D212B] px-16 py-10 my-10">
+                <h1 class="text-2xl text-white/50">Delivery time</h1>
+                <div class="flex justify-between items-center">
+                    <p class="text-4xl text-white font-semibold">30 - 40 min</p>
+                    <p class="text-4xl text-white font-semibold">Go to order</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,896 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <title>Time log</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+    <title>Timelog white</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400;500;600&display=swap');
+    </style>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'maven': ['Maven Pro', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="flex font-maven">
+    <!-- SIDEBAR-->
+    <div class="w-20 shadow-2xl h-screen flex flex-col">
+        <!--logo-->
+        <div class="h-full mt-10 mx-6">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-letter-r" width="40" height="60" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                <path d="M7 20v-16h5.5a4 4 0 0 1 0 9h-5.5"></path>
+                <path d="M12 13l5 7"></path>
+            </svg>
+        </div>
+
+        <!--navigation-->
+        <div class="flex flex-col justify-evenly items-center h-full py-10">    
+            <button class="">
+            <svg class="stroke-gray-400 my-6" xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-layout-dashboard" width="35" height="35" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round" >
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                <path d="M4 4h6v8h-6z"></path>
+                <path d="M4 16h6v4h-6z"></path>
+                <path d="M14 12h6v8h-6z"></path>
+                <path d="M14 4h6v4h-6z"></path>
+            </svg>
+            </button>
+
+            <button class="rounded-r-full bg-gradient-to-r from-[#010A62] from-10% via-[#10288B] via-30% to-[#5568D6] to-90% w-24 overflow-visible py-6">
+            <svg class="ml-6 stroke-white"xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock-hour-12" width="35" height="35" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                <path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0"></path>
+                <path d="M12 7v5"></path>
+            </svg>
+            </button>
+
+            <button class="">
+            <svg class="stroke-gray-400 my-6" xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chart-bubble" width="35" height="35" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                <path d="M6 16m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0"></path>
+                <path d="M16 19m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0"></path>
+                <path d="M14.5 7.5m-4.5 0a4.5 4.5 0 1 0 9 0a4.5 4.5 0 1 0 -9 0"></path>
+            </svg>
+            </button>
+
+            <button class="">    
+            <svg class="stroke-gray-400 my-6" xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-camera" width="35" height="35" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                <path d="M5 7h1a2 2 0 0 0 2 -2a1 1 0 0 1 1 -1h6a1 1 0 0 1 1 1a2 2 0 0 0 2 2h1a2 2 0 0 1 2 2v9a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-9a2 2 0 0 1 2 -2"></path>
+                <path d="M9 13a3 3 0 1 0 6 0a3 3 0 0 0 -6 0"></path>
+            </svg>
+            </button>
+
+            <button class="">  
+            <svg class="stroke-gray-400 my-6" xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-mood-happy" width="35" height="35" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                <path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0"></path>
+                <path d="M9 9l.01 0"></path>
+                <path d="M15 9l.01 0"></path>
+                <path d="M8 13a4 4 0 1 0 8 0h-8"></path>
+            </svg>
+            </button>  
+
+            <div class="bg-transparent h-28"></div>
+
+            <button class=""> 
+            <svg class="stroke-gray-400" xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-logout-2" width="35" height="35" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                <path d="M10 8v-2a2 2 0 0 1 2 -2h7a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-7a2 2 0 0 1 -2 -2v-2"></path>
+                <path d="M15 12h-12l3 -3"></path>
+                <path d="M6 15l-3 -3"></path>
+            </svg>
+            </button>
+        </div>
+    </div>
+
+    <!-- CONTAINER -->
+    <div class="w-full m-16">
+        <!--Search and navigation-->
+        <div class="flex justify-between content-center text-bold">
+            <!--search bar-->
+            <div class="basis-1/3">
+                <div class="relative flex items-center w-full h-14 rounded-full shadow-[rgba(17,_17,_26,_0.1)_0px_0px_40px] bg-white overflow-hidden">
+                    <div class="grid place-items-center h-full w-16 text-gray-300">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                        </svg>
+                    </div>
+                    <input class="text-xl" type="text" placeholder="Find project, person..." /> 
+                </div>
+            </div>
+
+            <!--navigation-->
+            <div class="basis-2/3 flex justify-end gap-12 text-2xl text-center text-gray-400 m-auto font-medium">
+                <a href="#">Company</a>
+                <a href="#">People</a>
+                <a href="#">Calendar</a>
+                <a href="#">News</a>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-bell-pin stroke-gray-400" width="35" height="35" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                    <path d="M12 17h-8a4 4 0 0 0 2 -3v-3a7 7 0 0 1 4 -6a2 2 0 1 1 4 0a7 7 0 0 1 4 6"></path>
+                    <path d="M9 17v1a3 3 0 0 0 3.64 2.931"></path>
+                    <path class="stroke-teal-300" d="M21.121 20.121a3 3 0 1 0 -4.242 0c.418 .419 1.125 1.045 2.121 1.879c1.051 -.89 1.759 -1.516 2.121 -1.879z"></path>
+                    <path  class="stroke-cyan-300" d="M19 18v.01"></path>
+                </svg>
+            </div>
+        </div>
+
+        <!--Navigation links-->
+        <div class="flex gap-8 text-2xl capitalize font-semibold py-16">
+            <a href="#">
+                <p class="">MY REPORT</p>
+                <div class="h-1 w-12 bg-[#5568D6] my-2"></div>
+            </a>
+            <a href="#">
+                <p class="text-gray-400">PROJECT REPORT</p>
+                <div class="hidden h-1 w-12 bg-[#5568D6] my-2"></div>
+            </a>
+            <a href="#">
+                <p class="text-gray-400">USER REPORT</p>
+                <div class="hidden h-1 w-12 bg-[#5568D6] my-2"></div>
+            </a>
+        </div>
+
+        <!-- CONTENT -->    
+        <h1 class="text-4xl font-semibold">My Report</h1>
+        
+        <!--table-->
+        <div class="flex border-2 border-gray-200 rounded-3xl my-8">
+            <!-- 1st column-->
+            <div class="basis-2/12 border-r-2 border-gray-200 px-3">
+                <h2 class="text-[#5568D6] font-semibold text-3xl pl-14 py-14">June</h2>
+                <div class="flex flex-col text-2xl font-semibold mb-14 gap-6 mt-3">
+                    <div class="flex">
+                        <span class="basis-1/5"></span>         
+                        <a href="" class="basis-4/5 text-gray-800 py-2">Daily total</a>
+                    </div>           
+                    <div class="flex">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="basis-1/5 icon icon-tabler icon-tabler-chevron-down stroke-gray-400 mt-1" width="28" height="28" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                            <path d="M6 9l6 6l6 -6"></path>
+                        </svg>
+                        <a href="" class="basis-4/5">Projects</a>
+                    </div>                    
+                    <div class="flex">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="basis-1/5 icon icon-tabler icon-tabler-chevron-up stroke-gray-400 mt-1" width="28" height="28" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                            <path d="M6 15l6 -6l6 6"></path>
+                        </svg>
+                        <a href="" class="basis-4/5">Pre-sales</a>
+                    </div>
+                    <div class="flex">
+                        <span class="basis-1/5"></span>
+                        <a href="" class="basis-4/5 text-gray-500 truncate">Patriot logistics</a>
+                    </div>
+                    <div class="flex">                    
+                        <span class="basis-1/5"></span>
+                        <a href="" class="basis-4/5 text-gray-500 truncate">AR Bottle</a>
+                    </div>
+                    <div class="flex">
+                        <span class="basis-1/5"></span>
+                        <a href="" class="basis-4/5 text-gray-500 truncate">Portal App</a>
+                    </div>
+                    <div class="flex">
+                        <span class="basis-1/5"></span>
+                        <a href="" class="basis-4/5 text-gray-500 truncate">Interactive Book</a>
+                    </div>
+                    <div class="flex">
+                        <span class="basis-1/5"></span>
+                        <a href="" class="basis-4/5 text-gray-500 truncate">Yotta Digital Ventur</a>
+                    </div>
+                    <div class="flex">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="basis-1/5 icon icon-tabler icon-tabler-chevron-down stroke-gray-400 mt-1" width="30" height="30" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                            <path d="M6 9l6 6l6 -6"></path>
+                        </svg>
+                        <a href="" class="basis-4/5 truncate">Department</a>
+                    </div>
+                    <div class="flex">
+                        <span class="basis-1/5"></span>
+                        <a href="" class="basis-4/5 truncate">Vacation</a>
+                    </div>                    
+                </div>
+            </div>
+
+            <!-- 2nd column (weeks)-->
+            <div class="basis-8/12 flex flex-row overflow-x-auto">
+                <!-- week 1-->
+                <div class="min-w-max border-r-2 border-gray-200 bg-[#F9F9FD] shadow-[inset_10px_0px_10px_0px_#edf2f7]">
+                    <div class="flex justify-between py-4 px-2 text-xl">
+                        <p class="font-semibold text-gray-400">Jun 1-7</p>
+                        <p class="font-semibold text-gray-400">Week 1</p>
+                    </div>
+
+                    <div class="text-center font-medium text-2xl grid grid-cols-7 gap-3 ">
+                        <p class="text-[#5568D6] px-2 pt-3">1</p>
+                        <p class="text-[#5568D6] px-2 pt-3">2</p>
+                        <p class="text-[#5568D6] px-2 pt-3">3</p>
+                        <p class="text-[#5568D6] px-2 pt-3">4</p>
+                        <p class="text-[#5568D6] px-2 pt-3">5</p>
+                        <p class="text-gray-400 px-2 pt-3">6</p>
+                        <p class="text-gray-400 px-2 pt-3">7</p>
+                    </div>
+
+                    <div class="text-center text-l text-gray-400 font-semibold grid grid-cols-7 gap-3">
+                        <p class="px-2 pb-3">Mon</p>
+                        <p class="px-2 pb-3">Tue</p>
+                        <p class="px-2 pb-3">Wed</p>
+                        <p class="px-2 pb-3">Thu</p>
+                        <p class="px-2 pb-3">Fri</p>
+                        <p class="px-2 pb-3">Sat</p>
+                        <p class="px-2 pb-3">Sun</p>
+                    </div>
+
+                    <div class="text-center font-semibold text-xl grid grid-cols-7 py-9 h-14 gap-3">
+                        <p class="">8</p>
+                        <p class="">10</p>
+                        <p class="">8</p>
+                        <p class="">8</p>
+                        <p class="">8</p>
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300">0</p>
+                    </div>
+
+                    <div class="text-center font-semibold text-xl grid grid-cols-7 px-2 py-6 h-14 gap-3">
+                        <p class="text-gray-300">0</p>
+                        <p class="">8</p>
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300">0</p>
+                        <p class="">8</p>
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300">0</p>
+                    </div>
+
+                    <div class="text-center font-semibold text-xl grid grid-cols-7 px-2 py-6 h-14 gap-3">
+                        <p class="">8</p>
+                        <p class="">8</p>
+                        <p class="">8</p>
+                        <p class="">8</p>
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300">0</p>
+                    </div>
+
+                    <div class="text-center font-semibold text-xl grid grid-cols-7 px-2 py-6 h-14 gap-3">
+                        <p class="">8</p>
+                        <p class="text-gray-300">0</p>
+                        <p class="">8</p>
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300">0</p>
+                    </div>
+
+                    <div class="text-center font-semibold text-xl grid grid-cols-7 px-2 py-6 h-14 gap-3">
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300">0</p>
+                        <p class="">8</p>
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300">0</p>
+                    </div>
+
+                    <div class="text-center font-semibold text-xl grid grid-cols-7 px-2 py-6 h-14 gap-3">
+                        <p class="text-gray-300">0</p>
+                        <p class="">8</p>
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300">0</p>
+                    </div>
+
+                    <div class="text-center font-semibold text-xl grid grid-cols-7 px-2 py-6 h-14 gap-3">
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300">0</p>
+                    </div>
+
+                    <div class="text-center font-semibold text-xl grid grid-cols-7 px-2 py-6 h-14 gap-3">
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300">0</p>
+                    </div>
+
+                    <div class="text-center font-semibold text-xl grid grid-cols-7 px-2 py-6 h-14 gap-3">
+                        <p class="text-gray-300">0</p>
+                        <p class="bg-[#E8E9F7] border-0 rounded-lg p-2 relative">2
+                        <span class="absolute top-1 -right-1 inline-flex rounded-full h-3 w-3 bg-[#5568D6]"></span>
+                        </p>
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300">0</p>
+                    </div>
+
+                    <div class="text-center font-semibold text-xl grid grid-cols-7 px-2 py-6 h-14 gap-3">
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300">0</p>
+                    </div>
+                </div>
+
+                <!-- week 2-->
+                <div class="min-w-max border-r-2 border-gray-200">
+                    <div class="flex justify-between py-4 px-2 text-xl">
+                        <p class="font-semibold text-[#5568D6]">Jun 8-14</p>
+                        <p class="font-semibold text-[#5568D6]">Week 2</p>
+                    </div>
+
+                    <div class="text-center font-medium text-2xl grid grid-cols-7 gap-3">
+                        <p class="text-[#5568D6] px-2 pt-3">8</p>
+                        <p class="text-[#5568D6] px-2 pt-3">9</p>
+                        <p class="text-[#5568D6] px-2 pt-3">10</p>
+                        <p class="text-[#5568D6] relative px-2 pt-3">11
+                            <span class="border-l-2 border-indigo-500 border-dashed left-0 absolute h-[42rem] -mx-2"></span>                        
+                        </p>
+                        <p class="bg-[#5568D6] rounded-t-full text-white relative px-2 pt-3">12                        
+                            <span class="absolute right-1 top-0 inline-flex rounded-full h-3 w-3 bg-cyan-300"></span>
+                            <span class="absolute border-l-2 border-indigo-500 border-dashed h-[42rem] mx-4"></span>
+                        </p>                    
+                        <p class="text-gray-400 relative px-2 pt-3">13</p>
+                        <p class="text-gray-400 px-2 pt-3">14</p>
+                    </div>
+
+                    <div class="text-center text-l text-gray-400 font-semibold grid grid-cols-7 gap-3">
+                        <p class="px-2 pb-3">Mon</p>
+                        <p class="px-2 pb-3">Tue</p>
+                        <p class="px-2 pb-3">Wed</p>
+                        <p class="px-2 pb-3">Thu</p>
+                        <p class="bg-[#5568D6] rounded-b-full text-white px-2 pb-3">Fri</p>
+                        <p class="px-2 pb-3">Sat</p>
+                        <p class="px-2 pb-3">Sun</p>
+                    </div>
+
+                    <div class="text-center font-semibold text-xl grid grid-cols-7 py-9 h-14 gap-3">
+                        <p class="">8</p>
+                        <p class="">8</p>
+                        <p class="">8</p>
+                        <p class="">8</p>
+                        <p class="relative text-gray-300">0
+                            <span class="absolute rounded-t-full rounded-b-full w-12 pattern-diagonal-lines pattern-blue-300 pattern-bg-white pattern-opacity-100 pattern-size-2 h-[34.5rem] left-0 -top-2 -z-10"></span>
+                        </p>
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300">0</p>
+                    </div>
+
+                    <div class="text-center font-semibold text-xl grid grid-cols-7 px-2 py-6 h-14 gap-3">
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300">0</p>
+                        <p class="">8</p>
+                        <p class="">8</p>
+                        <p class="text-gray-300 z-0">0</p>
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300">0</p>
+                    </div>
+
+                    <div class="text-center font-semibold text-xl grid grid-cols-7 px-2 py-6 h-14 gap-3">
+                        <p class="">8</p>
+                        <p class="">8</p>
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300 z-0">0</p>
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300">0</p>
+                    </div>
+
+                    <div class="text-center font-semibold text-xl grid grid-cols-7 px-2 py-6 h-14 gap-3">
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300 z-0">0</p>
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300">0</p>
+                    </div>
+
+                    <div class="text-center font-semibold text-xl grid grid-cols-7 px-2 py-6 h-14 gap-3">
+                        <p class="text-gray-300">0</p>
+                        <p class="">8</p>
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300 z-0">0</p>
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300">0</p>
+                    </div>
+
+                    <div class="text-center font-semibold text-xl grid grid-cols-7 px-2 py-6 h-14 gap-3">
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300 z-0">0</p>
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300">0</p>
+                    </div>
+
+                    <div class="text-center font-semibold text-xl grid grid-cols-7 px-2 py-6 h-14 gap-3">
+                        <p class="">8</p>
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300 z-0">0</p>
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300">0</p>
+                    </div>
+
+                    <div class="text-center font-semibold text-xl grid grid-cols-7 px-2 py-6 h-14 gap-3">
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300 z-0">0</p>
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300">0</p>
+                    </div>
+
+                    <div class="text-center font-semibold text-xl grid grid-cols-7 px-2 py-6 h-14 gap-3">
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300 z-0">0</p>
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300">0</p>
+                    </div>
+                    
+                    <div class="text-center font-semibold text-xl grid grid-cols-7 px-2 py-6 h-14 gap-3">
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300 z-0">0</p>
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300">0</p>
+                    </div>
+                </div>
+
+                <!-- week 3-->
+                <div class="min-w-max border-r-2 border-gray-200 bg-[#F9F9FD]">
+                    <div class="flex justify-between py-4 px-2 text-xl">
+                        <p class="font-semibold text-gray-400">Jun 15-21</p>
+                        <p class="font-semibold text-gray-400">Week 3</p>
+                    </div>
+
+                    <div class="text-center font-medium text-2xl grid grid-cols-7 gap-3">
+                        <p class="text-[#5568D6] px-2 pt-3">15</p>
+                        <p class="text-[#5568D6] px-2 pt-3">16</p>
+                        <p class="text-[#5568D6] px-2 pt-3">17</p>
+                        <p class="text-[#5568D6] px-2 pt-3">18</p>
+                        <p class="text-[#5568D6] px-2 pt-3 relative z-0">19
+                            <span class="absolute right-1 top-0 inline-flex rounded-full h-3 w-3 bg-amber-400"></span>
+                            <span class="absolute rounded-t-full rounded-b-full w-12 pattern-diagonal-lines pattern-gray pattern-bg-white pattern-opacity-100 pattern-size-2 h-[41rem] -z-10 right-0 top-0"></span>
+                        </p>
+                        <p class="text-gray-400 px-2 pt-3">20</p>
+                        <p class="text-gray-400 px-2 pt-3">21</p>
+                    </div>
+
+                    <div class="text-center text-l text-gray-400 font-semibold grid grid-cols-7 gap-3">
+                        <p class="px-2 pb-3">Mon</p>
+                        <p class="px-2 pb-3">Tue</p>
+                        <p class="px-2 pb-3">Wed</p>
+                        <p class="px-2 pb-3">Thu</p>
+                        <p class="px-2 pb-3 z-0">Fri</p>
+                        <p class="px-2 pb-3">Sat</p>
+                        <p class="px-2 pb-3">Sun</p>
+                    </div>
+
+                    <div class="text-center font-semibold text-xl grid grid-cols-7 py-9 h-14 gap-3">
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300 z-0">0</p>
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300">0</p>
+                    </div>
+
+                    <div class="text-center font-semibold text-xl grid grid-cols-7 px-2 py-6 h-14 gap-3">
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300 z-0">0</p>
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300">0</p>
+                    </div>
+
+                    <div class="text-center font-semibold text-xl grid grid-cols-7 px-2 py-6 h-14 gap-3">
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300 z-0">0</p>
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300">0</p>
+                    </div>
+
+                    <div class="text-center font-semibold text-xl grid grid-cols-7 px-2 py-6 h-14 gap-3">
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300 z-0">0</p>
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300">0</p>
+                    </div>
+
+                    <div class="text-center font-semibold text-xl grid grid-cols-7 px-2 py-6 h-14 gap-3">
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300 z-0">0</p>
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300">0</p>
+                    </div>
+
+                    <div class="text-center font-semibold text-xl grid grid-cols-7 px-2 py-6 h-14 gap-3">
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300 z-0">0</p>
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300">0</p>
+                    </div>
+
+                    <div class="text-center font-semibold text-xl grid grid-cols-7 px-2 py-6 h-14 gap-3">
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300 z-0">0</p>
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300">0</p>
+                    </div>
+
+                    <div class="text-center font-semibold text-xl grid grid-cols-7 px-2 py-6 h-14 gap-3">
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300 z-0">0</p>
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300">0</p>
+                    </div>
+
+                    <div class="text-center font-semibold text-xl grid grid-cols-7 px-2 py-6 h-14 gap-3">
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300 z-0">0</p>
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300">0</p>
+                    </div>
+                    
+                    <div class="text-center font-semibold text-xl grid grid-cols-7 px-2 py-6 h-14 gap-3">
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300 z-0">0</p>
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300">0</p>
+                    </div>
+                </div>
+
+                <!-- week 4-->
+                <div class="min-w-max border-r-2 border-gray-200 bg-[#F9F9FD]">
+                    <div class="flex justify-between py-4 px-2 text-xl">
+                        <p class="font-semibold text-gray-400">Jun 22-28</p>
+                        <p class="font-semibold text-gray-400">Week 4</p>
+                    </div>
+
+                    <div class="text-center font-medium text-2xl grid grid-cols-7 gap-3">
+                        <p class="text-[#5568D6] px-2 pt-3">22</p>
+                        <p class="text-[#5568D6] px-2 pt-3">23</p>
+                        <p class="text-[#5568D6] px-2 pt-3">24</p>
+                        <p class="text-[#5568D6] px-2 pt-3">25</p>
+                        <p class="text-[#5568D6] px-2 pt-3">26</p>
+                        <p class="text-gray-400 px-2 pt-3">27</p>
+                        <p class="text-gray-400 px-2 pt-3">28</p>
+                    </div>
+
+                    <div class="text-center text-l text-gray-400 font-semibold grid grid-cols-7 gap-3">
+                        <p class="px-2 pb-3">Mon</p>
+                        <p class="px-2 pb-3">Tue</p>
+                        <p class="px-2 pb-3">Wed</p>
+                        <p class="px-2 pb-3">Thu</p>
+                        <p class="px-2 pb-3">Fri</p>
+                        <p class="px-2 pb-3">Sat</p>
+                        <p class="px-2 pb-3">Sun</p>
+                    </div>
+
+                    <div class="text-center font-semibold text-xl grid grid-cols-7 py-9 h-14 gap-3">
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300">0</p>
+                    </div>
+
+                    <div class="text-center font-semibold text-xl grid grid-cols-7 px-2 py-6 h-14 gap-3">
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300">0</p>
+                    </div>
+
+                    <div class="text-center font-semibold text-xl grid grid-cols-7 px-2 py-6 h-14 gap-3">
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300">0</p>
+                    </div>
+
+                    <div class="text-center font-semibold text-xl grid grid-cols-7 px-2 py-6 h-14 gap-3">
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300">0</p>
+                    </div>
+
+                    <div class="text-center font-semibold text-xl grid grid-cols-7 px-2 py-6 h-14 gap-3">
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300">0</p>
+                    </div>
+
+                    <div class="text-center font-semibold text-xl grid grid-cols-7 px-2 py-6 h-14 gap-3">
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300">0</p>
+                    </div>
+
+                    <div class="text-center font-semibold text-xl grid grid-cols-7 px-2 py-6 h-14 gap-3">
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300">0</p>
+                    </div>
+
+                    <div class="text-center font-semibold text-xl grid grid-cols-7 px-2 py-6 h-14 gap-3">
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300">0</p>
+                    </div>
+
+                    <div class="text-center font-semibold text-xl grid grid-cols-7 px-2 py-6 h-14 gap-3">
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300">0</p>
+                    </div>
+                    
+                    <div class="text-center font-semibold text-xl grid grid-cols-7 px-2 py-6 h-14 gap-3">
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300">0</p>
+                    </div>
+                </div>
+
+                <!-- week 5-->
+                <div class="min-w-max border-r-2 border-gray-200 bg-[#F9F9FD]">
+                    <div class="flex justify-between py-4 px-2 text-xl">
+                        <p class="font-semibold text-gray-400">Jun 28-Jul 4</p>
+                        <p class="font-semibold text-gray-400">Week 5</p>
+                    </div>
+
+                    <div class="text-center font-medium text-2xl grid grid-cols-7 gap-3">
+                        <p class="text-[#5568D6] px-2 pt-3">28</p>
+                        <p class="text-[#5568D6] px-2 pt-3">29</p>
+                        <p class="text-[#5568D6] px-2 pt-3">30</p>
+                        <p class="text-gray-400 px-2 pt-3">1</p>
+                        <p class="text-gray-400 px-2 pt-3">2</p>
+                        <p class="text-gray-400 px-2 pt-3">3</p>
+                        <p class="text-gray-400 px-2 pt-3">4</p>
+                    </div>
+
+                    <div class="text-center text-l text-gray-400 font-semibold grid grid-cols-7 gap-3">
+                        <p class="px-2 pb-3">Mon</p>
+                        <p class="px-2 pb-3">Tue</p>
+                        <p class="px-2 pb-3">Wed</p>
+                        <p class="px-2 pb-3">Thu</p>
+                        <p class="px-2 pb-3">Fri</p>
+                        <p class="px-2 pb-3">Sat</p>
+                        <p class="px-2 pb-3">Sun</p>
+                    </div>
+
+                    <div class="text-center font-semibold text-xl grid grid-cols-7 py-9 h-14 gap-3">
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300">0</p>
+                    </div>
+                    
+                    <div class="text-center font-semibold text-xl grid grid-cols-7 px-2 py-6 h-14 gap-3">
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300">0</p>
+                    </div>
+
+                    <div class="text-center font-semibold text-xl grid grid-cols-7 px-2 py-6 h-14 gap-3">
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300">0</p>
+                    </div>
+
+                    <div class="text-center font-semibold text-xl grid grid-cols-7 px-2 py-6 h-14 gap-3">
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300">0</p>
+                    </div>
+
+                    <div class="text-center font-semibold text-xl grid grid-cols-7 px-2 py-6 h-14 gap-3">
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300">0</p>
+                    </div>
+
+                    <div class="text-center font-semibold text-xl grid grid-cols-7 px-2 py-6 h-14 gap-3">
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300">0</p>
+                    </div>
+
+                    <div class="text-center font-semibold text-xl grid grid-cols-7 px-2 py-6 h-14 gap-3">
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300">0</p>
+                    </div>
+
+                    <div class="text-center font-semibold text-xl grid grid-cols-7 px-2 py-6 h-14 gap-3">
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300">0</p>
+                    </div>
+
+                    <div class="text-center font-semibold text-xl grid grid-cols-7 px-2 py-6 h-14 gap-3">
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300">0</p>
+                    </div>
+                    
+                    <div class="text-center font-semibold text-xl grid grid-cols-7 px-2 py-6 h-14 gap-3">
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300">0</p>
+                        <p class="text-gray-300">0</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 3rd column (total)-->
+            <div class="basis-2/12 grid grid-cols-3 shadow-[-9px_0px_6px_0px_#EDF2F7] text-center ">
+                <div class="border-x-2 border-gray-200 grid content-normal">
+                    <p class=" font-semibold text-gray-400 pt-4 text-xl">Plan</p>
+                    <p class="font-semibold text-2xl">168</p>
+                </div>
+                <div class="border-r-2 border-gray-200 grid content-normal">
+                    <p class=" font-semibold text-gray-400 pt-4 text-xl">Overtime</p>
+                    <p class="font-semibold text-2xl">0</p>
+                </div>
+                <div class="order-gray-200 grid content-normal">
+                    <p class="font-semibold text-gray-400 pt-4 text-xl">Total</p>
+                    <p class="text-[#5568D6] font-semibold text-2xl">126</p>
+                </div>                
+            </div>
+        </div>
+
+        <!--Legend-->
+        <div class="flex flex-nowrap items-center h-auto">
+            <span class="rounded-full h-4 w-4 bg-amber-400"></span>
+            <p class="text-2xl font-semibold pl-2 pr-12">- company day off;</p>
+
+            <span class="rounded-full h-4 w-4 bg-cyan-300"></span>
+            <p class="text-2xl font-semibold pl-2 pr-12">- personal day off;</p>
+
+            <span class="rounded-full h-4 w-4 bg-red-500"></span>
+            <p class="text-2xl font-semibold pl-2 pr-12">- need to figure out;</p>
+
+            <span class="rounded-full h-4 w-4 bg-[#5568D6]"></span>
+            <p class="text-2xl font-semibold pl-2 pr-12">- overtime;</p>
+        </div>
+    </div>
+</body>
+</html>

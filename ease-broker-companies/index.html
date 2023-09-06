@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Ease Broker Companies List</title>
+</head>
+<body>    
+    <!--NAV BAR-->
+    <div class="flex justify-between content-center bg-white h-20 px-96">
+        <div class="basis-2/3 flex justify-start gap-12">
+            <img src="/ease-broker-companies/ease.JPG" class="h-10 my-auto">
+            <a href="#" class="inline-flex items-center px-3">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home mr-2" width="32" height="32" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                    <path d="M5 12l-2 0l9 -9l9 9l-2 0"></path>
+                    <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7"></path>
+                    <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6"></path>
+                </svg>
+                <p class="text-2xl font-semibold">Home</p>
+            </a>
+        
+            <a href="#" class="inline-flex items-center border-b-[3px] border-[#1F52D9] px-3">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-building-skyscraper mr-2 stroke-[#1F52D9]" width="32" height="32" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                    <path d="M3 21l18 0"></path>
+                    <path d="M5 21v-14l8 -4v18"></path>
+                    <path d="M19 21v-10l-6 -4"></path>
+                    <path d="M9 9l0 .01"></path>
+                    <path d="M9 12l0 .01"></path>
+                    <path d="M9 15l0 .01"></path>
+                    <path d="M9 18l0 .01"></path>
+                </svg>
+                <p class="text-xl font-semibold text-[#1F52D9]">Companies</p>
+            </a>
+        
+            <a href="#" class="inline-flex items-center px-3">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-eyeglass-2 mr-2" width="32" height="32" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                    <path d="M8 4h-2l-3 10v2.5"></path>
+                    <path d="M16 4h2l3 10v2.5"></path>
+                    <path d="M10 16l4 0"></path>
+                    <path d="M17.5 16.5m-3.5 0a3.5 3.5 0 1 0 7 0a3.5 3.5 0 1 0 -7 0"></path>
+                    <path d="M6.5 16.5m-3.5 0a3.5 3.5 0 1 0 7 0a3.5 3.5 0 1 0 -7 0"></path>
+                </svg>
+                <p class="text-2xl font-semibold">Changes</p>
+                <p class="bg-red-400 rounded-full text-xl font-bold px-3.5 pt-0.5 pb-1 mx-2 text-white">2</p>
+            </a>
+            
+            <a href="#" class="inline-flex items-center px-3">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chart-bar mr-2" width="32" height="32" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                    <path d="M3 12m0 1a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v6a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1z"></path>
+                    <path d="M9 8m0 1a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v10a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1z"></path>
+                    <path d="M15 4m0 1a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v14a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1z"></path>
+                    <path d="M4 20l14 0"></path>
+                </svg>
+                <p class="text-2xl font-semibold">Reports</p>
+            </a>
+            
+            <a href="#" class="inline-flex items-center px-3">
+                <p class="text-2xl font-semibold">More</p>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-down mr-2" width="32" height="32" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                    <path d="M6 9l6 6l6 -6"></path>
+                </svg>                
+            </a>
+        </div>
+
+        <div class="flex">
+            <!--search bar-->
+            <div class="flex items-center relative mr-10">
+                <input class="text-2xl leading-none text-left text-gray-600 px-4 py-3 border rounded border-gray-300 w-96" type="text" placeholder="Search employees"/>
+                <svg class="absolute right-3 z-10" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M10 17C13.866 17 17 13.866 17 10C17 6.13401 13.866 3 10 3C6.13401 3 3 6.13401 3 10C3 13.866 6.13401 17 10 17Z" stroke="#4B5563" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"></path>
+                    <path d="M21 21L15 15" stroke="#4B5563" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+            </div>
+
+            <!--user+chevron-->
+            <button class="inline-flex m-auto">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="32" height="32" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                    <path d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0"></path>
+                    <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2"></path>
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-down" width="32" height="32" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                    <path d="M6 9l6 6l6 -6"></path>
+                </svg>
+            </button>
+        </div>
+    </div>
+
+    <!--TITLE-->
+    <div class="bg-[#F2F3FA] border-y-2 border-[#EAECEF] h-56 px-96 grid content-center">
+        <span class="inline-flex items-center">
+            <span class=" bg-[#5B4EFF] rounded-2xl p-3">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-building-skyscraper mr-2 stroke-white" width="60" height="60" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                    <path d="M3 21l18 0"></path>
+                    <path d="M5 21v-14l8 -4v18"></path>
+                    <path d="M19 21v-10l-6 -4"></path>
+                    <path d="M9 9l0 .01"></path>
+                    <path d="M9 12l0 .01"></path>
+                    <path d="M9 15l0 .01"></path>
+                    <path d="M9 18l0 .01"></path>
+                </svg>
+            </span>
+            <p class="text-5xl font-bold text-black px-6">Companies</p>
+            <p class="rounded-3xl text-3xl px-4 py-1 font-semibold text-gray-400 border-2 border-gray-400 mt-3">76</p>
+        </span>
+    </div>
+
+    <!--SEARCH/SORT/VUE-->
+    <div class="flex justify-between mt-8 px-96">       
+        <!--search bar-->
+        <div class="flex items-center relative">
+            <input class="text-xl font-semibold leading-none text-left text-gray-600 px-4 py-3 border rounded border-gray-300 w-96" type="text" placeholder="Search employees"/>
+            <svg class="absolute right-3 z-10" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M10 17C13.866 17 17 13.866 17 10C17 6.13401 13.866 3 10 3C6.13401 3 3 6.13401 3 10C3 13.866 6.13401 17 10 17Z" stroke="#4B5563" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M21 21L15 15" stroke="#4B5563" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+        </div>        
+
+        <div class="flex justify-end gap-8">
+            <!--sort by-->
+            <div class="relative">
+                <button class="flex items-center whitespace-nowrap font-semibold border rounded-md border-gray-300 bg-primary-100 pl-6 pr-4 pb-2 pt-2.5 pb-2 text-xl leading-normal ease-in-out" type="button">
+                Sort by <p class="text-[#2151D8] pl-3">Name</p>
+                <span class="">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-down stroke-[#2151D8] ml-6" width="32" height="32" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                        <path d="M6 9l6 6l6 -6"></path>
+                    </svg>
+                </span>
+                </button>
+            </div>
+
+            <!--grid/list-->
+            <div class="flex items-center relative bg-[#F2F3FA] pl-1 rounded-md ">
+                <button class="justify-evenly inline-flex items-center bg-white h-12 rounded-md w-28 text-center border-[1px] shadow shadow-gray-100 mr-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-layout-grid" width="30" height="30" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                        <path d="M4 4m0 1a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v4a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1z"></path>
+                        <path d="M14 4m0 1a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v4a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1z"></path>
+                        <path d="M4 14m0 1a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v4a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1z"></path>
+                        <path d="M14 14m0 1a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v4a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1z"></path>
+                    </svg>
+                    <p class="text-xl font-semibold">Grid</p>
+                </button>
+                <button class="justify-evenly inline-flex items-center h-10 w-28 text-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-list" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                        <path d="M9 6l11 0"></path>
+                        <path d="M9 12l11 0"></path>
+                        <path d="M9 18l11 0"></path>
+                        <path d="M5 6l0 .01"></path>
+                        <path d="M5 12l0 .01"></path>
+                        <path d="M5 18l0 .01"></path>
+                    </svg>
+                    <p class="text-xl font-semibold">List</p>
+                </button>
+            </div>
+
+            <!-- add company-->
+            <button class="flex items-center whitespace-nowrap font-semibold border rounded-md border-gray-300 bg-[#2151D8] text-white font-semibold px-4 text-xl leading-normal ease-in-out" type="button">Add a company</button>
+        </div>
+    </div>            
+
+    <!--CARDS-->
+    <div class="grid  grid-cols-3 mt-8 px-96 gap-6 ">            
+        <div1 class="border-[2px] border-gray-200 rounded-lg hover:bg-[#FFFAF5]">
+            <h1 class="font-semibold text-3xl px-5 pt-5 px-5 pt-5">Bose</h1>
+            <p class="font-semibold text-xl px-5">Audio Acoustic Playhouse Inc</p>
+            <p class="font-semibold text-gray-400 mt-4 px-5 pb-5">56 employees</p>
+        </div1>
+        <div2 class="border-[2px] border-gray-200 rounded-lg hover:bg-[#FFFAF5]">
+            <h1 class="font-semibold text-3xl px-5 pt-5 mb-10">Disabled American Veteran</h1>
+            <span class="flex justify-between">
+
+                <span class="inline flex pl-5">
+                    <p class="font-semibold text-xl text-white bg-[#1DBB7F] rounded-3xl px-2">656</p>
+                    <p class="font-semibold text-xl ml-2">Enrolled</p>
+                </span>
+
+                <span class="inline flex">
+                    <p class="font-semibold text-xl text-white bg-[#FF9B00] rounded-3xl px-2">486</p>
+                    <p class="font-semibold text-xl ml-2">In progress</p>
+                </span>
+
+                <span class="inline flex pr-5">
+                    <p class="font-semibold text-xl text-white bg-[#FF554D] rounded-3xl px-2">173</p>
+                    <p class="font-semibold text-xl ml-2">Not started</p>
+                </span>                    
+            </span>
+            <div class="mt-4">
+                <div class="overflow-hidden h-1 text-xs flex rounded bg-white">
+                    <div style="width: 60%" class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-[#1DBB7F] mr-0.5"></div>
+                    <div style="width: 35%" class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-[#FF9B00] mr-0.5"></div>
+                    <div style="width: 15%" class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-[#FF554D]"></div>
+                </div>
+                </div>
+        </div2>
+        <div3 class="border-[2px] border-gray-200 rounded-lg hover:bg-[#FFFAF5]">
+            <h1 class="font-semibold text-3xl px-5 pt-5">Ease</h1>
+            <p class="font-semibold text-xl px-5">Enrollease, Inc.</p>
+            <p class="font-semibold text-gray-400 mt-4 px-5 pb-5">56 employees</p>
+        </div3>
+        <div4 class="border-[2px] border-gray-200 rounded-lg hover:bg-[#FFFAF5]">
+            <h1 class="font-semibold text-3xl px-5 pt-5">Home Equipment Rentals</h1>
+            <p class="font-semibold text-xl px-5">Ideal products incorporated</p>
+            <p class="font-semibold text-gray-400 mt-4 px-5 pb-5">56 employees</p>
+        </div4>
+        <div5 class="border-[2px] border-gray-200 rounded-lg hover:bg-[#FFFAF5]">
+            <h1 class="font-semibold text-3xl px-5 pt-5 mb-10">Superior Equipment Repair</h1>
+            <p class="font-semibold text-gray-400 mt-4 px-5 pb-5">56 employees</p>
+        </div5>
+        <div6 class="border-[2px] border-gray-200 rounded-lg hover:bg-[#FFFAF5]">
+            <h1 class="font-semibold text-3xl px-5 pt-5">Trucking & Sweeping</h1>
+            <p class="font-semibold text-xl px-5">Disabled American Veteran Enterprises Trucking</p>
+            <p class="font-semibold text-gray-400 mt-4 px-5 pb-5">Enrollment 65% Complete</p>
+            <div class="mt-4">
+                <div class="overflow-hidden h-1 text-xs flex rounded bg-white">
+                    <div style="width: 60%" class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-[#1DBB7F] mr-0.5"></div>
+                    <div style="width: 35%" class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-[#FF9B00] mr-0.5"></div>
+                    <div style="width: 15%" class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-[#FF554D]"></div>
+                </div>
+                </div>
+        </div6>
+        <div7 class="border-[2px] border-gray-200 rounded-lg hover:bg-[#FFFAF5]">
+            <h1 class="font-semibold text-3xl px-5 pt-5">MetaLab</h1>
+            <p class="font-semibold text-xl px-5">MetaLab Inc.</p>
+            <p class="font-semibold text-gray-400 mt-4 px-5 pb-5">Enrollment 58% Complete</p>
+            <div class="mt-4">
+                <div class="overflow-hidden h-1 text-xs flex rounded bg-white">
+                    <div style="width: 60%" class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-[#1DBB7F] mr-0.5"></div>
+                    <div style="width: 35%" class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-[#FF9B00] mr-0.5"></div>
+                    <div style="width: 15%" class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-[#FF554D]"></div>
+                </div>
+                </div>
+        </div7>
+        <div8 class="border-[2px] border-gray-200 rounded-lg hover:bg-[#FFFAF5]">
+            <h1 class="font-semibold text-3xl px-5 pt-5 mb-10">Mike's plumbing and electricity</h1>
+            <p class=""></p>
+            <p class="font-semibold text-gray-400 mt-4 px-5 pb-5">Enrollment 65% Complete</p>
+            <div class="mt-5">
+                <div class="overflow-hidden h-1 text-xs flex rounded bg-white">
+                    <div style="width: 60%" class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-[#1DBB7F] mr-0.5"></div>
+                    <div style="width: 35%" class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-[#FF9B00] mr-0.5"></div>
+                    <div style="width: 15%" class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-[#FF554D]"></div>
+                </div>
+                </div>
+        </div8>
+        <div9 class="border-[2px] border-gray-200 rounded-lg hover:bg-[#FFFAF5]">
+            <h1 class="font-semibold text-3xl px-5 pt-5 mb-10">Optovia</h1>
+            <p class="font-semibold text-gray-400 mt-4 px-5 pb-5">56 employees</p>
+        </div9>
+        <div10 class="border-[2px] border-gray-200 rounded-lg hover:bg-[#FFFAF5]">
+            <h1 class="font-semibold text-3xl px-5 pt-5">Viome</h1>
+            <p class="font-semibold text-xl px-5">Health</p>
+            <p class="font-semibold text-gray-400 mt-4 px-5 pb-5">56 employees</p>
+        </div10>
+        <div11 class="border-[2px] border-gray-200 rounded-lg hover:bg-[#FFFAF5]">
+            <h1 class="font-semibold text-3xl px-5 pt-5">Addepar</h1>
+            <p class="font-semibold text-xl px-5">Investment portfolio</p>
+            <p class="font-semibold text-gray-400 mt-4 px-5 pb-5">56 employees</p>
+        </div11>
+        <div12 class="border-[2px] border-gray-200 rounded-lg hover:bg-[#FFFAF5]">
+            <h1 class="font-semibold text-3xl px-5 pt-5 mb-10">Crypto.com</h1>
+            <p class="font-semibold text-gray-400 mt-4 px-5 pb-5">56 employees</p>
+        </div12>
+        <div13 class="border-[2px] border-gray-200 rounded-lg hover:bg-[#FFFAF5]">
+            <h1 class="font-semibold text-3xl px-5 pt-5 mb-10">Rocket Mortgage</h1>
+            <p class="font-semibold text-gray-400 mt-4 px-5 pb-5">Enrollment 75% Complete</p>
+            <div class="mt-5">
+                <div class="overflow-hidden h-1 text-xs flex rounded bg-white">
+                    <div style="width: 60%" class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-[#1DBB7F] mr-0.5"></div>
+                    <div style="width: 35%" class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-[#FF9B00] mr-0.5"></div>
+                    <div style="width: 15%" class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-[#FF554D]"></div>
+                </div>
+                </div>
+        </div13>
+        <div14 class="border-[2px] border-gray-200 rounded-lg hover:bg-[#FFFAF5]">
+            <h1 class="font-semibold text-3xl px-5 pt-5">Revolut</h1>
+            <p class="font-semibold text-xl px-5">Online Bank</p>
+            <p class="font-semibold text-gray-400 mt-4 px-5 pb-5">56 employees</p>
+        </div14>
+        <div15 class="border-[2px] border-gray-200 rounded-lg hover:bg-[#FFFAF5]">
+            <h1 class="font-semibold text-3xl px-5 pt-5">Wealthsimple</h1>
+            <p class="font-semibold text-xl px-5">Robot Advisor</p>
+            <p class="font-semibold text-gray-400 mt-4 px-5 pb-5">Enrollment 85% Complete</p>
+            <div class="mt-4">
+                <div class="overflow-hidden h-1 text-xs flex rounded bg-white">
+                    <div style="width: 60%" class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-[#1DBB7F] mr-0.5"></div>
+                    <div style="width: 35%" class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-[#FF9B00] mr-0.5"></div>
+                    <div style="width: 15%" class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-[#FF554D]"></div>
+                </div>
+                </div>
+        </div15>             
+    </div>
+</body>
+</html>

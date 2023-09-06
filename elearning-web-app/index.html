@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400;500;600&family=Varela+Round&display=swap');
+        
+        .no-scrollbar::-webkit-scrollbar {display: none;}
+    </style>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'varela': ['Varela Round', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <title>E-learning Web App</title>
+</head>
+<body class="flex bg-[#180600] font-varela h-screen p-4 pl-0 overflow-hidden">
+    <!-- SIDEBAR-->
+    <div class="h-full w-32 h-screen fixed flex flex-col bg-[#180600] justify-between text-center py-10">
+        <!--logo-->
+        <img src="/elearning-web-app/logo.png" class="mx-auto w-50 h-50"> 
+         
+        <!--navigation-->
+        <div class="flex flex-col items-center gap-10">
+            <div class="">
+                <svg xmlns="http://www.w3.org/2000/svg" class="mx-auto stroke-[#594C48] icon icon-tabler icon-tabler-circle-half" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                    <path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0"></path>
+                    <path d="M12 3v18"></path>
+                    </svg>
+                    <p class="text-[#594C48]">Main</p>
+            </div>
+
+            <div class="w-full relative">
+                <svg xmlns="http://www.w3.org/2000/svg" class="mx-auto stroke-white icon icon-tabler icon-tabler-dual-screen" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                    <path d="M5 4l8 3v15l-8 -3z"></path>
+                    <path d="M13 19h6v-15h-14"></path>
+                </svg>
+                <p class="text-[#F9F9F9]">Courses</p>
+                <div class="absolute right-0 top-0 bg-[#F9F9F9] w-1 h-12 rounded-l-md"></div>
+            </div>
+        
+            <div class="">
+                <svg xmlns="http://www.w3.org/2000/svg" class="mx-auto stroke-[#594C48] icon icon-tabler icon-tabler-calendar" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                    <path d="M4 7a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2v-12z"></path>
+                    <path d="M16 3v4"></path>
+                    <path d="M8 3v4"></path>
+                    <path d="M4 11h16"></path>
+                    <path d="M11 15h1"></path>
+                    <path d="M12 15v3"></path>
+                </svg>
+                <p class="text-[#594C48]">Schedule</p>
+            </div>
+        
+            <div class="">
+                <svg xmlns="http://www.w3.org/2000/svg" class="mx-auto stroke-[#594C48] icon icon-tabler icon-tabler-book" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                    <path d="M3 19a9 9 0 0 1 9 0a9 9 0 0 1 9 0"></path>
+                    <path d="M3 6a9 9 0 0 1 9 0a9 9 0 0 1 9 0"></path>
+                    <path d="M3 6l0 13"></path>
+                    <path d="M12 6l0 13"></path>
+                    <path d="M21 6l0 13"></path>
+                </svg>
+                <p class="text-[#594C48]">Materials</p>
+            </div>
+        
+            <div class="">    
+                <svg xmlns="http://www.w3.org/2000/svg" class="mx-auto stroke-[#594C48] icon icon-tabler icon-tabler-certificate" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                    <path d="M15 15m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0"></path>
+                    <path d="M13 17.5v4.5l2 -1.5l2 1.5v-4.5"></path>
+                    <path d="M10 19h-5a2 2 0 0 1 -2 -2v-10c0 -1.1 .9 -2 2 -2h14a2 2 0 0 1 2 2v10a2 2 0 0 1 -1 1.73"></path>
+                    <path d="M6 9l12 0"></path>
+                    <path d="M6 12l3 0"></path>
+                    <path d="M6 15l2 0"></path>
+                </svg>
+                <p class="text-[#594C48]">Certificates</p>
+            </div>
+        
+            <div class="">  
+                <svg xmlns="http://www.w3.org/2000/svg" class="mx-auto stroke-[#594C48] icon icon-tabler icon-tabler-message-circle-2" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                    <path d="M3 20l1.3 -3.9a9 8 0 1 1 3.4 2.9l-4.7 1"></path>
+                </svg>
+                <p class="text-[#594C48]">Messages</p>
+            </div>  
+
+            <div class="">  
+                <svg xmlns="http://www.w3.org/2000/svg" class="mx-auto stroke-[#594C48] icon icon-tabler icon-tabler-settings" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                    <path d="M10.325 4.317c.426 -1.756 2.924 -1.756 3.35 0a1.724 1.724 0 0 0 2.573 1.066c1.543 -.94 3.31 .826 2.37 2.37a1.724 1.724 0 0 0 1.065 2.572c1.756 .426 1.756 2.924 0 3.35a1.724 1.724 0 0 0 -1.066 2.573c.94 1.543 -.826 3.31 -2.37 2.37a1.724 1.724 0 0 0 -2.572 1.065c-.426 1.756 -2.924 1.756 -3.35 0a1.724 1.724 0 0 0 -2.573 -1.066c-1.543 .94 -3.31 -.826 -2.37 -2.37a1.724 1.724 0 0 0 -1.065 -2.572c-1.756 -.426 -1.756 -2.924 0 -3.35a1.724 1.724 0 0 0 1.066 -2.573c-.94 -1.543 .826 -3.31 2.37 -2.37c1 .608 2.296 .07 2.572 -1.065z"></path>
+                    <path d="M9 12a3 3 0 1 0 6 0a3 3 0 0 0 -6 0"></path>
+                </svg>
+                <p class="text-[#594C48]">Settings</p>
+            </div>                       
+        </div>
+
+        <!--logout-->
+        <div class="mb-5"> 
+            <svg xmlns="http://www.w3.org/2000/svg" class="mx-auto stroke-[#594C48] icon icon-tabler icon-tabler-logout" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                <path d="M14 8v-2a2 2 0 0 0 -2 -2h-7a2 2 0 0 0 -2 2v12a2 2 0 0 0 2 2h7a2 2 0 0 0 2 -2v-2"></path>
+                <path d="M9 12h12l-3 -3"></path>
+                <path d="M18 15l3 -3"></path>
+                </svg>
+            <p class="text-[#594C48]">Log out</p>
+        </div> 
+    </div>
+        
+    <!-- CONTAINER-->
+    <div class="w-full h-full flex flex-row rounded-3xl bg-[#F9F9F9] ml-32 overflow-hidden">       
+        <!--LEFT SIDE-->
+        <div class="basis-2/5 overflow-y-auto no-scrollbar">
+            <!--TITLE AND SEARCH-->
+            <div class="flex m-10 mt-12 justify-between">
+                <h1 class="text-5xl font-bold">Courses</h1>
+                <button class="grid place-items-center w-14 h-12 bg-white rounded-xl shadow-sm">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                    </svg>
+                </button>
+            </div>
+
+            <!--NAV BAR-->
+            <div class="text-3xl m-10">
+                <a href="" class="px-5 pl-0">All</a>
+                <a href="" class="text-gray-300 px-5">Active</a>
+                <a href="" class="text-gray-300 px-5">Completed</a>
+            </div>
+
+            <!--LANGUAGES-->
+            <div class="grid grid-flow-col justify-between m-10 place-items-center">
+                <!--flag english-->
+                <button class="flex place-items-center border-2 border-gray-200 rounded-3xl h-16">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="m-4 h-8 w-8 rounded-full" id="flag-icons-gb" viewBox="0 0 512 512">
+                        <path fill="#012169" d="M0 0h512v512H0z"/>
+                        <path fill="#FFF" d="M512 0v64L322 256l190 187v69h-67L254 324 68 512H0v-68l186-187L0 74V0h62l192 188L440 0z"/>
+                        <path fill="#C8102E" d="m184 324 11 34L42 512H0v-3l184-185zm124-12 54 8 150 147v45L308 312zM512 0 320 196l-4-44L466 0h46zM0 1l193 189-59-8L0 49V1z"/>
+                        <path fill="#FFF" d="M176 0v512h160V0H176zM0 176v160h512V176H0z"/>
+                        <path fill="#C8102E" d="M0 208v96h512v-96H0zM208 0v512h96V0h-96z"/>
+                      </svg>
+                    <p class="text-lg text-black font-semibold pr-4">English</p>
+                </button>
+
+                <!--flag spain-->
+                <button class="flex place-items-center border-2 border-gray-200 rounded-3xl h-16 ">
+                    <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="m-4 h-8 w-8 rounded-full"  aria-hidden="true" role="img" class="iconify iconify--emojione" preserveAspectRatio="xMidYMid meet" fill="#000000">
+                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M2 32c0 5.9 1.7 11.4 4.6 16h50.7c2.9-4.6 4.6-10.1 4.6-16s-1.7-11.4-4.6-16H6.6C3.7 20.6 2 26.1 2 32z" fill="#ffce31"> </path> <g fill="#ed4c5c"> <path d="M57.4 16C52.1 7.6 42.7 2 32 2S11.9 7.6 6.6 16h50.8z"> </path> <path d="M6.6 48c5.3 8.4 14.7 14 25.4 14s20.1-5.6 25.4-14H6.6z"> </path> </g> <g fill="#c8b100"> <path d="M9.2 28.7h3.2v1.8H9.2z"> </path> <path d="M9.2 41.9h3.3v1.7H9.2z"> </path> </g> <path d="M8.9 39.1c-.3.2-.5.4-.5.5c0 .1.1.2.3.3c.2.1.4.3.3.5c.2-.2.3-.4.3-.6c0-.3-.2-.6-.4-.7" fill="#ed4c5c"> </path> <path fill="#ffffff" d="M9.7 30.5H12v11.4H9.7z"> </path> <g fill="#ed4c5c"> <path d="M14.4 34.7c-.5-.2-1.4-.4-2.4-.4c-.3 0-.7 0-1.1.1c-1.4.2-2.5.8-2.4 1.2L8 34.5c-.1-.5 1.1-1.1 2.6-1.4c.5-.1 1-.1 1.4-.1c1 0 1.9.1 2.4.3v1.4"> </path> <path d="M9.7 36.2c-.6 0-1.1-.2-1.1-.5c0-.2.2-.5.6-.7h.6l-.1 1.2"> </path> <path d="M12 35.3c.4.1.7.2.9.3c.1.1-.3.5-.9.8v-1.1"> </path> <path d="M8.2 38.4c-.1-.2.6-.6 1.5-.9c.4-.1.7-.3 1.2-.5c1.2-.5 2.2-1.2 2-1.4l.2 1.2c.1.2-.7.8-1.9 1.4c-.4.2-1.1.5-1.5.6c-.7.2-1.3.6-1.3.7l-.2-1.1"> </path> </g> <g fill="#c8b100"> <path d="M30.7 28.7h3.2v1.8h-3.2z"> </path> <path d="M30.6 41.9h3.3v1.7h-3.3z"> </path> </g> <path d="M34.2 39.1c.3.2.5.4.5.5c0 .1-.1.2-.3.3c-.2.2-.4.5-.3.6c-.2-.2-.3-.4-.3-.6c0-.4.2-.7.4-.8" fill="#ed4c5c"> </path> <path fill="#ffffff" d="M31.1 30.5h2.3v11.4h-2.3z"> </path> <g fill="#ed4c5c"> <path d="M28.7 34.7c.5-.2 1.4-.4 2.4-.4c.3 0 .7 0 1.1.1c1.4.2 2.5.8 2.4 1.2l.5-1.2c.1-.5-1.1-1.1-2.6-1.4h-1.4c-1 0-1.9.1-2.4.3v1.4"> </path> <path d="M33.4 36.2c.6 0 1.1-.2 1.1-.5c0-.2-.2-.5-.6-.7h-.6l.1 1.2"> </path> <path d="M31.1 35.3c-.4.1-.7.2-.9.3c-.1.1.3.5.9.8v-1.1"> </path> <path d="M34.9 38.4c.1-.2-.6-.6-1.5-.9c-.4-.1-.7-.3-1.2-.5c-1.2-.5-2.2-1.2-2-1.4l-.2 1.2c-.1.2.7.8 1.9 1.4c.4.2 1.1.5 1.5.6c.7.2 1.3.7 1.2.8l.3-1.2"> </path> <path d="M21.5 22.3c1.9 0 5.8.4 7.2 1.8c-1.5 3.6-3.9 2.1-7.2 2.1c-3.2 0-5.7 1.5-7.2-2.1c1.4-1.4 5.2-1.8 7.2-1.8"> </path> </g> <g fill="#c8b100"> <path d="M26.4 26.3c-1.2-.7-3-.8-4.9-.8c-1.9 0-3.7.2-4.9.8L17 28c1.1.3 2.7.5 4.5.5c1.8 0 3.3-.2 4.5-.5l.4-1.7"> </path> <path d="M28.1 22c-.4-.3-1.2-.6-1.9-.6c-.3 0-.6 0-.9.1c0 0-.6-.8-2-.8c-.5 0-.9.1-1.3.3v-.1c-.1-.2-.3-.4-.5-.4s-.5.3-.5.5v.1c-.4-.2-.8-.3-1.3-.3c-1.4 0-2 .9-2 .8c-.3-.1-.6-.1-.9-.1c-4.6 0-2.3 3.1-2.3 3.1l.5-.6c-1.1-1.4-.1-2.2 1.9-2.2c.3 0 .5 0 .7.1c-.7 1 .6 1.9.6 1.9l.3-.5c-.7-.5-.8-2.2 1.2-2.2c.5 0 .9.1 1.3.4c0 .1-.1 1.5-.2 1.7l.8.7l.8-.7c-.1-.3-.2-1.6-.2-1.7c.3-.2.8-.4 1.3-.4c2.1 0 2.1 1.7 1.2 2.2l.3.5s1.1-.9.6-1.9c.2 0 .5-.1.7-.1c2.4 0 2.5 1.8 1.9 2.2l.4.6c-.2 0 .9-1.4-.5-2.6"> </path> </g> <path d="M20.9 20.1c0-.3.3-.6.6-.6c.4 0 .6.3.6.6s-.3.6-.6.6s-.6-.3-.6-.6" fill="#005bbf"> </path> <path fill="#c8b100" d="M21.3 18.4v.3H21v.3h.3v1h-.4v.3h1.2l.1-.2l-.1-.1h-.4v-1h.3v-.3h-.3v-.3z"> </path> <path d="M21.5 28.3c-1.6 0-3-.2-4.1-.5c1.1-.3 2.5-.5 4.1-.5c1.6 0 3 .2 4.1.5c-1 .3-2.5.5-4.1.5" fill="#ed4c5c"> </path> <g fill="#ffffff"> <path d="M21.6 45.6c-1.9 0-3.7-.5-5.3-1.2c-1.2-.6-1.9-1.7-1.9-3v-4.8h14.4v4.8c0 1.3-.8 2.5-1.9 3c-1.6.8-3.4 1.2-5.3 1.2"> </path> <path d="M21.5 28.6h7.2v8h-7.2z"> </path> </g> <path d="M21.6 41.4c0 1.9-1.6 3.4-3.6 3.4s-3.6-1.5-3.6-3.4v-4.8h7.2v4.8" fill="#ed4c5c"> </path> <g fill="#c8b100"> <path d="M15.9 44.2c.2.1.5.3.9.4v-8.2H16l-.1 7.8"> </path> <path d="M14.3 41.3c0 1 .4 1.8.8 2.2v-7.1h-.8v4.9"> </path> </g> <path d="M17.5 44.8h.8v-8.4h-.8v8.4" fill="#c7b500"> </path> <path d="M19.1 44.6c.3-.1.7-.3.9-.4v-7.8h-.8l-.1 8.2" fill="#c8b100"> </path> <path fill="#ed4c5c" d="M14.3 28.6h7.2v8h-7.2z"> </path> <path d="M20.8 43.5c.4-.3.7-1 .8-1.8v-5.2h-.8v7" fill="#c8b100"> </path> <g fill="#ed4c5c"> <path d="M28.8 36.6v4.8c0 1.9-1.6 3.4-3.6 3.4s-3.6-1.5-3.6-3.4v-4.8h7.2"> </path> <path d="M26.2 30c.3.6.3 2.1-.6 1.8c.2.1.3.8.6 1.2c.5.6 1.1.1 1-.6c-.2-1.1-.1-1.8.1-2.9c0 .1.5.1.7-.1c-.1.3-.2.7 0 .7c-.2.3-.7.8-.8 1.1c-.1.7 1 2-.2 2.3c-.8.2-.3.8 0 1.1c0 0-.4 1.3-.2 1.2c-.8.3-.6-.4-.6-.4c.4-1.2-.7-1.3-.6-1.5c-1-.1.1.9-.8.9c-.2 0-.6.2-.6.2c-1.1-.1-.5-1.1-.1-1c.3.1.6.6.6-.1c0 0-.5-.8.8-.8c-.5 0-.8-.4-1-.9c-.2.1-.5.6-1.6.7c0 0-.3-1.1 0-.9c.4.2.6.2 1-.2c-.2-.3-1.4-.7-1.2-1.4c0-.2.6-.5.6-.5c-.1.5.2 1 .8 1c.8.1.5-.2.6-.4c.1-.2.7.1.5-.4c0-.1-.7-.2-.5-.5c.4-.5 1-.1 1.5.4"> </path> <path d="M21.6 44.6l-.2-.5l.2-.6l.2.6l-.2.5"> </path> </g> <g fill="#c8b100"> <path d="M16.5 30.3v.5h.2v.4h-.5v1h.3v2.2h-.6v1.1H20v-1.1h-.5v-2.2h.2v-1h-.5v-.4h.3v-.5h-1v.5h.2v.4h-.5V30h.3v-.5h-1.1v.5h.3v1.2h-.5v-.4h.2v-.5z"> </path> <path d="M27.8 42.6v-5h-5.2v5l2.4 1.1h.3l2.5-1.1M25 38v1.7L23.3 38H25m-2.1.1l2 2l-2 2v-4m.2 4.4l1.9-1.9v2.8l-1.9-.9m2.2.8v-2.8l1.9 1.9l-1.9.9m2.1-1.2l-2-2l2-2v4M25.3 38H27l-1.7 1.7V38"> </path> </g> <path d="M19.2 36.5c0-1.5 1-2.6 2.3-2.6s2.3 1.2 2.3 2.6c0 1.4-1 2.6-2.3 2.6s-2.3-1.1-2.3-2.6" fill="#ed4c5c"> </path> <path d="M19.9 36.5c0-1.1.7-1.9 1.6-1.9c.9 0 1.6.9 1.6 1.9c0 1.1-.7 1.9-1.6 1.9c-.8.1-1.6-.8-1.6-1.9" fill="#005bbf"> </path> <g fill="#c8b100"> <path d="M20.8 35.2l-.4 1.1l.3.1l-.2.4h.6l-.2-.4l.3-.1l-.4-1.1"> </path> <path d="M22.3 35.2l-.4 1.1l.3.1l-.2.4h.6l-.1-.4l.3-.1l-.5-1.1"> </path> <path d="M21.6 36.5l-.5 1.1l.3.1l-.1.4h.5l-.1-.4l.3-.1l-.4-1.1"> </path> </g> </g>
+                    </svg>
+                    <p class="text-lg text-black font-semibold pr-4">Spanish</p>
+                </button>
+
+                <!--flag french-->
+                <button class="flex place-items-center border-2 border-gray-200 rounded-3xl h-16 ">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="m-4 h-8 w-8 rounded-full" id="flag-icons-fr" viewBox="0 0 512 512">
+                    <path fill="#fff" d="M0 0h512v512H0z"/>
+                    <path fill="#002654" d="M0 0h170.7v512H0z"/>
+                    <path fill="#ce1126" d="M341.3 0H512v512H341.3z"/>
+                  </svg>
+                  <p class="text-lg text-black font-semibold pr-4">French</p>
+                </button>
+
+                <!--flag chinese-->
+                <button class="flex place-items-center border-2 border-gray-200 rounded-3xl h-16 ">
+                    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" class="m-4 h-8 w-8 rounded-full" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 130 120" enable-background="new 0 0 130 120" xml:space="preserve" fill="#000000">
+                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g id="Infos"> <rect id="BG" x="-350" y="-1350" fill="#D8D8D8" width="2180" height="1700"></rect> </g> <g id="Others"> <g> <rect fill="#DC4437" width="130" height="120"></rect> <polygon fill="#FCBE1F" points="31,14.5 36.9,27 50,29 40.5,38.8 42.7,52.5 31,46 19.3,52.5 21.5,38.8 12,29 25.1,27 "></polygon> <polygon fill="#FCBE1F" points="60.5,8 62.8,12.9 68,13.7 64.2,17.6 65.1,23 60.5,20.4 55.9,23 56.8,17.6 53,13.7 58.2,12.9 "></polygon> <polygon fill="#FCBE1F" points="64.5,25.8 66.8,30.8 72,31.6 68.2,35.4 69.1,40.8 64.5,38.3 59.9,40.8 60.8,35.4 57,31.6 62.2,30.8 "></polygon> <polygon fill="#FCBE1F" points="60.5,44 62.8,48.9 68,49.7 64.2,53.6 65.1,59 60.5,56.4 55.9,59 56.8,53.6 53,49.7 58.2,48.9 "></polygon> </g> </g> <g id="Europe"> <g id="Row_5"> </g> <g id="Row_4"> </g> <g id="Row_3"> </g> <g id="Row_2"> </g> <g id="Row_1"> </g> </g> </g>
+                    </svg>
+                    <p class="text-lg text-black font-semibold pr-4">Chinese</p>
+                </button>
+
+                <!--filter-->
+                <button class="grid place-items-center w-16 h-16 bg-white rounded-xl shadow-sm">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 icon icon-tabler icon-tabler-adjustments-horizontal" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                        <path d="M14 6m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0"></path>
+                        <path d="M4 6l8 0"></path>
+                        <path d="M16 6l4 0"></path>
+                        <path d="M8 12m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0"></path>
+                        <path d="M4 12l2 0"></path>
+                        <path d="M10 12l10 0"></path>
+                        <path d="M17 18m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0"></path>
+                        <path d="M4 18l11 0"></path>
+                        <path d="M19 18l1 0"></path>
+                     </svg>
+                </button>
+            </div>
+
+            <!--CARDS-->
+            <div class="grid grid-col gap-4 m-10">                
+                <a href="#" class="bg-white shadow-sm rounded-3xl flex">
+                    <img class="rounded-lg w-60 h-44 m-4" src="https://media.istockphoto.com/id/1395435280/fr/vectoriel/bonjour-dans-diff%C3%A9rentes-langues.jpg?s=612x612&w=0&k=20&c=t0Ye-3z0d0woT8nS3XYyS61UmLdi-YngBXny4QV817s=" alt="">
+                    <div class="grid grid-col text-justify p-6 content-between">
+                        <h5 class="text-xl font-bold text-gray-900 ">Learning strategy: <i>how</i> instead of <i>what</i></h5>
+                        <p class="font-sm text-gray-300">This course discusses the main units and principles of the human nervous system that underlie our language.</p>
+                        <div class="flex justify-between">                                       
+                            <div class="flex items-center pb-5">
+                                <svg class="w-4 h-4 text-yellow-300 mr-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                                    <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"/>
+                                </svg>
+                                <svg class="w-4 h-4 text-yellow-300 mr-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                                    <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"/>
+                                </svg>
+                                <svg class="w-4 h-4 text-yellow-300 mr-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                                    <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"/>
+                                </svg>
+                                <svg class="w-4 h-4 text-yellow-300 mr-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                                    <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"/>
+                                </svg>
+                                <svg class="w-4 h-4 text-yellow-300 mr-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                                    <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"/>
+                                </svg>
+                                <p class="text-sm font-medium font-semibold text-gray-500">5</p>
+                                <p class="ml-1 text-gray-200 text-sm">(1034)</p>
+                            </div>
+                            <div class="bg-gray-50 text-gray-300 font-semibold rounded-lg text-sm h-9 text-center p-2.5 inline-flex">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-circle-check-filled mr-2" width="16" height="16" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                    <path d="M17 3.34a10 10 0 1 1 -14.995 8.984l-.005 -.324l.005 -.324a10 10 0 0 1 14.995 -8.336zm-1.293 5.953a1 1 0 0 0 -1.32 -.083l-.094 .083l-3.293 3.292l-1.293 -1.292l-.094 -.083a1 1 0 0 0 -1.403 1.403l.083 .094l2 2l.094 .083a1 1 0 0 0 1.226 0l.094 -.083l4 -4l.083 -.094a1 1 0 0 0 -.083 -1.32z" stroke-width="0" fill="currentColor"></path>
+                                </svg>
+                                <p class="text-gray-400 font-semibold">All levels</p>
+                            </div>
+                        </div> 
+                    </div>
+                    
+                </a>
+
+                <a href="#" class="bg-white shadow-sm rounded-3xl flex">
+                    <img class="rounded-lg w-60 h-44 m-4" src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTw_9pZspCQKSN_ePr9xE6Xs3yw0I2oc3kIiPLeqWdS8dqBfC1T" alt="">
+                    <div class="grid grid-col text-justify p-6 content-between">
+                        <h5 class="text-xl font-bold text-gray-900 ">English for career development</h5>
+                        <p class="font-sm text-gray-300">This course is designed for non-native English speakers who are interested in advancing their language.</p>
+                        <div class="flex justify-between">                                       
+                            <div class="flex items-center pb-5">
+                                <svg class="w-4 h-4 text-yellow-300 mr-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                                    <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"/>
+                                </svg>
+                                <svg class="w-4 h-4 text-yellow-300 mr-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                                    <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"/>
+                                </svg>
+                                <svg class="w-4 h-4 text-yellow-300 mr-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                                    <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"/>
+                                </svg>
+                                <svg class="w-4 h-4 text-yellow-300 mr-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                                    <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"/>
+                                </svg>
+                                <svg class="w-4 h-4 text-gray-200 mr-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                                    <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"/>
+                                </svg>
+                                <p class="text-sm font-medium font-semibold text-gray-500">4</p>
+                                <p class="ml-1 text-gray-200 text-sm">(294)</p>
+                            </div>
+                            <div class="bg-gray-50 text-gray-300 font-semibold rounded-lg text-sm  text-center px-2.5 flex inline-flex items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-circle-check-filled pb-1 " width="30" height="30" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                    <path stroke="black" d="M6 18l0 -3"></path>
+                                    <path stroke="black" d="M10 18l0 -6"></path>
+                                    <path d="M14 18l0 -9"></path>
+                                 </svg>
+                                <p class="text-gray-400 font-semibold">Intermediate</p>
+                            </div>
+                        </div> 
+                    </div>
+                    
+                </a>
+
+                <a href="#" class="bg-white shadow-sm rounded-3xl flex">
+                    <img class="rounded-lg w-60 h-44 m-4" src="https://media.istockphoto.com/id/1395678441/fr/vectoriel/gar%C3%A7on-%C3%A9tudiant-la-langue-chinoise-caract%C3%A8re-vectoriel-de-couleur-semi-plat.jpg?s=612x612&w=0&k=20&c=VPo89n1BbvF5aN5OAhPOh42b7W4jZgdBNebgP-KObtE=" alt="">
+                    <div class="grid grid-col text-justify p-6 content-between">
+                        <h5 class="text-xl font-bold text-gray-900 ">First steps in Chinese</h5>
+                        <p class="font-sm text-gray-300">This is an elementary-level Korean language course, consisting of 5 lessons, and covers 4 skills : reading, writing, speaking.</p>
+                        <div class="flex justify-between">                                       
+                            <div class="flex items-center pb-5">
+                                <svg class="w-4 h-4 text-yellow-300 mr-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                                    <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"/>
+                                </svg>
+                                <svg class="w-4 h-4 text-yellow-300 mr-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                                    <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"/>
+                                </svg>
+                                <svg class="w-4 h-4 text-yellow-300 mr-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                                    <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"/>
+                                </svg>
+                                <svg class="w-4 h-4 text-gray-200 mr-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                                    <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"/>
+                                </svg>
+                                <svg class="w-4 h-4 text-gray-200 mr-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                                    <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"/>
+                                </svg>
+                                <p class="text-sm font-medium font-semibold text-gray-500">3</p>
+                                <p class="ml-1 text-gray-200 text-sm">(172)</p>
+                            </div>
+                            <div class="bg-gray-50 text-gray-300 font-semibold rounded-lg text-sm  text-center px-2.5 flex inline-flex items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-circle-check-filled pb-1 " width="30" height="30" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                    <path stroke="black" d="M6 18l0 -3"></path>
+                                    <path d="M10 18l0 -6"></path>
+                                    <path d="M14 18l0 -9"></path>
+                                 </svg>
+                                <p class="text-gray-400 font-semibold">Beginner</p>
+                            </div>
+                        </div> 
+                    </div>                    
+                </a>
+
+                <a href="#" class="bg-white shadow-sm rounded-3xl flex">
+                    <img class="rounded-lg w-60 h-44 m-4" src="https://media.istockphoto.com/id/1367916086/fr/vectoriel/les-%C3%A9tudiants-adultes-apprennent-langlais-un-groupe-de-personnes-%C3%A2g%C3%A9es-%C3%A9tudie.jpg?s=612x612&w=0&k=20&c=V5gUvYWC5h4u6urZ2VLYVMCAxvwQYNEiPDcyNUJRJr0=" alt="">
+                    <div class="grid grid-col text-justify p-6 content-between">
+                        <h5 class="text-xl font-bold text-gray-900 ">English teaching: managing the class</h5>
+                        <p class="font-sm text-gray-300">The course will introduce students to important aspects of classroom management: class size and blablabla</p>
+                        <div class="flex justify-between">                                       
+                            <div class="flex items-center pb-5">
+                                <svg class="w-4 h-4 text-yellow-300 mr-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                                    <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"/>
+                                </svg>
+                                <svg class="w-4 h-4 text-yellow-300 mr-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                                    <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"/>
+                                </svg>
+                                <svg class="w-4 h-4 text-yellow-300 mr-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                                    <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"/>
+                                </svg>
+                                <svg class="w-4 h-4 text-yellow-300 mr-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                                    <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"/>
+                                </svg>
+                                <svg class="w-4 h-4 text-gray-200 mr-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                                    <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"/>
+                                </svg>
+                                <p class="text-sm font-medium font-semibold text-gray-500">4</p>
+                                <p class="ml-1 text-gray-200 text-sm">(165)</p>
+                            </div>
+                            <div class="bg-gray-50 text-gray-300 font-semibold rounded-lg text-sm  text-center px-2.5 flex inline-flex items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-circle-check-filled pb-1 " width="30" height="30" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                    <path stroke="black" d="M6 18l0 -3"></path>
+                                    <path stroke="black" d="M10 18l0 -6"></path>
+                                    <path d="M14 18l0 -9"></path>
+                                 </svg>
+                                <p class="text-gray-400 font-semibold">Intermediate</p>
+                            </div>
+                        </div> 
+                    </div>                    
+                </a>
+
+                <a href="#" class="bg-white shadow-sm rounded-3xl flex">
+                    <img class="rounded-lg w-60 h-44 m-4" src="https://media.istockphoto.com/id/1395295101/fr/vectoriel/illustration-isol%C3%A9e-vectorielle-2d-de-classe-anglaise.jpg?s=612x612&w=0&k=20&c=-sS1YrBAWiYVJdCn1mjeESAWO1lp0Vd9tnWNivMbeI0=" alt="">
+                    <div class="grid grid-col text-justify p-6 content-between">
+                        <h5 class="text-xl font-bold text-gray-900 ">Pronunciation of American English</h5>
+                        <p class="font-sm text-gray-300">Leaners will improve their pronunciation by praticting realistic dialogues and other interactive exercises.</p>
+                        <div class="flex justify-between">                                       
+                            <div class="flex items-center pb-5">
+                                <svg class="w-4 h-4 text-yellow-300 mr-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                                    <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"/>
+                                </svg>
+                                <svg class="w-4 h-4 text-yellow-300 mr-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                                    <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"/>
+                                </svg>
+                                <svg class="w-4 h-4 text-yellow-300 mr-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                                    <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"/>
+                                </svg>
+                                <svg class="w-4 h-4 text-yellow-300 mr-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                                    <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"/>
+                                </svg>
+                                <svg class="w-4 h-4 text-gray-200 mr-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                                    <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"/>
+                                </svg>
+                                <p class="text-sm font-medium font-semibold text-gray-500">5</p>
+                                <p class="ml-1 text-gray-200 text-sm">(97)</p>
+                            </div>
+                            <div class="bg-gray-50 text-gray-300 font-semibold rounded-lg text-sm h-9 text-center p-2.5 inline-flex">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-circle-check-filled mr-2" width="16" height="16" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                    <path d="M17 3.34a10 10 0 1 1 -14.995 8.984l-.005 -.324l.005 -.324a10 10 0 0 1 14.995 -8.336zm-1.293 5.953a1 1 0 0 0 -1.32 -.083l-.094 .083l-3.293 3.292l-1.293 -1.292l-.094 -.083a1 1 0 0 0 -1.403 1.403l.083 .094l2 2l.094 .083a1 1 0 0 0 1.226 0l.094 -.083l4 -4l.083 -.094a1 1 0 0 0 -.083 -1.32z" stroke-width="0" fill="currentColor"></path>
+                                </svg>
+                                <p class="text-gray-400 font-semibold">All levels</p>
+                            </div>
+                        </div> 
+                    </div>                    
+                </a>
+                
+                <a href="#" class="bg-white shadow-sm rounded-3xl flex">
+                    <img class="rounded-lg w-60 h-44 m-4" src="https://media.istockphoto.com/id/1499175495/fr/vectoriel/des-amis-qui-ont-obtenu-leur-dipl%C3%B4me-avec-une-casquette-et-une-robe-classe-de-fin.jpg?s=612x612&w=0&k=20&c=xfjRdzuQmAm-u8yRIbLqL7c8RM5fFobBJhf7g-7w9iA=" alt="">
+                    <div class="grid grid-col text-justify p-6 content-between">
+                        <h5 class="text-xl font-bold text-gray-900 ">Exam preparation: best things to do</h5>
+                        <p class="font-sm text-gray-300">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Culpa voluptatum nulla maiores exercitationem</p>
+                        <div class="flex justify-between">                                       
+                            <div class="flex items-center pb-5">
+                                <svg class="w-4 h-4 text-yellow-300 mr-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                                    <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"/>
+                                </svg>
+                                <svg class="w-4 h-4 text-yellow-300 mr-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                                    <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"/>
+                                </svg>
+                                <svg class="w-4 h-4 text-yellow-300 mr-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                                    <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"/>
+                                </svg>
+                                <svg class="w-4 h-4 text-yellow-300 mr-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                                    <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"/>
+                                </svg>
+                                <svg class="w-4 h-4 text-gray-200 mr-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                                    <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"/>
+                                </svg>
+                                <p class="text-sm font-medium font-semibold text-gray-500">5</p>
+                                <p class="ml-1 text-gray-200 text-sm">(21)</p>
+                            </div>
+                            <div class="bg-gray-50 text-gray-300 font-semibold rounded-lg text-sm h-9 text-center p-2.5 inline-flex">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-circle-check-filled mr-2" width="16" height="16" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                    <path d="M17 3.34a10 10 0 1 1 -14.995 8.984l-.005 -.324l.005 -.324a10 10 0 0 1 14.995 -8.336zm-1.293 5.953a1 1 0 0 0 -1.32 -.083l-.094 .083l-3.293 3.292l-1.293 -1.292l-.094 -.083a1 1 0 0 0 -1.403 1.403l.083 .094l2 2l.094 .083a1 1 0 0 0 1.226 0l.094 -.083l4 -4l.083 -.094a1 1 0 0 0 -.083 -1.32z" stroke-width="0" fill="currentColor"></path>
+                                </svg>
+                                <p class="text-gray-400 font-semibold">All levels</p>
+                            </div>
+                        </div> 
+                    </div>                    
+                </a>
+            </div>
+        </div>
+
+        <!--RIGHT SIDE-->
+        <div class="bg-white basis-3/5 rounded-r-3xl px-10 overflow-y-auto no-scrollbar">
+            <!--screen video-->
+            <img src="/elearning-web-app/vid.PNG" class="py-8 mx-auto w-full">
+
+            <!--rate/tag-->
+            <div class="flex w-full">
+                <div class="flex">
+                    <svg class="w-6 h-6 text-yellow-300 mr-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                        <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"/>
+                    </svg>
+                    <svg class="w-6 h-6 text-yellow-300 mr-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                        <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"/>
+                    </svg>
+                    <svg class="w-6 h-6 text-yellow-300 mr-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                        <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"/>
+                    </svg>
+                    <svg class="w-6 h-6 text-yellow-300 mr-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                        <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"/>
+                    </svg>
+                    <svg class="w-6 h-6 text-gray-200 mr-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                        <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"/>
+                    </svg>
+                    <p class="text-2xl font-medium font-semibold text-gray-500">4</p>
+                    <p class="ml-1 text-gray-300 text-2xl">(294)</p>
+                </div>
+                <div class="bg-gray-50 text-gray-300 font-semibold rounded-lg text-sm  text-center px-2.5 flex inline-flex items-center h-9 ml-8">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-circle-check-filled pb-1 " width="30" height="30" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                        <path stroke="black" d="M6 18l0 -3"></path>
+                        <path stroke="black" d="M10 18l0 -6"></path>
+                        <path d="M14 18l0 -9"></path>
+                        </svg>
+                    <p class="text-gray-400 font-semibold">Intermediate</p>
+                </div>
+            </div>
+
+            <!--title/description-->
+            <h1 class="text-5xl font-bold py-6">English for career development</h1>
+            <p class="text-gray-300 text-xl">In this course, you will learn about the job search, application, and interview process in the United States, while comparing and contrasting the same process in your home country. This course will also give you the opportunity to explore your global carre path, while building your vocabulary and improving your language skills to achieve your professional goals.</p>
+
+            <!--author-->
+            <div class="overflow-visible relative max-w-sm flex items-center gap-6 py-6">
+                <img class="object-cover absolute w-24 h-24 rounded-full" src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSeiFADhaebEEeSeRNSbOOpqOm_aTS1jO7Pbqq1CiZtOGb0nD9q">
+                <div class="flex flex-col py-5 pl-32">
+                  <strong class="text-slate-900 text-lg font-semibold ">Cortney Mc'Gregor</strong>
+                  <span class="text-gray-300 text-lg font-normal ">Professional English teacher</span>
+                </div>
+            </div>
+            
+            <!--title/list of courses-->
+            <span class="flex justify-between py-4">
+                <h1 class="text-3xl font-bold">Course's content</h1>
+                <p class="text-gray-300 text-2xl">12 lectures • 2 hours</p>
+            </span>
+
+            <!--course-->
+            <div class="grid grid-col gap-4 my-4 mb-10">                
+                <div href="#" class="bg-white shadow-sm rounded-3xl justify-between border-2 border-gray-100 flex w-full h-60">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-dots bg-[#D87355] stroke-white w-60 h-60 rounded-l-3xl" width="60" height="60" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                        <path d="M5 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"></path>
+                        <path d="M12 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"></path>
+                        <path d="M19 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"></path>
+                     </svg>
+                    <div class="grid grid-col text-justify p-6 content-between">
+                        <span class="inline-flex">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock-hour-3 stroke-gray-300 mr-2" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                <path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0"></path>
+                                <path d="M12 12h3.5"></path>
+                                <path d="M12 7v5"></path>
+                             </svg>
+                            <p class="font-sm text-gray-300">03:29 mins</p>
+                        </span>
+                        <h5 class="text-3xl font-bold text-gray-900 ">Intro</h5>
+                        <p class="text-xl font-semibold text-gray-300">Meet your teacher and see what you are going to learn in this course.</p>
+                        
+                    </div>
+                    <div class="m-auto mr-10">
+                        <div class="rounded-full bg-black w-24 h-24">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="mx-auto pt-5 icon icon-tabler icon-tabler-player-play-filled" width="75" height="75" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <path class="fill-black" stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                            <path class="fill-white" d="M6 4v16a1 1 0 0 0 1.524 .852l13 -8a1 1 0 0 0 0 -1.704l-13 -8a1 1 0 0 0 -1.524 .852z" stroke-width="0" fill="currentColor"></path>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>            
+        </div>
+    </div>    
+</body>
+</html>

@@ -1,0 +1,24 @@
+.pattern-diagonal-lines {
+    opacity: var(--pattern-opacity,0.5);
+    background-color: var(--pattern-bg-color,transparent);
+    background: repeating-linear-gradient(135deg,var(--pattern-color),var(--pattern-color) calc(var(--pattern-size, 40px) * .2),var(--pattern-bg-color,transparent) calc(var(--pattern-size, 40px) * .3),var(--pattern-bg-color) var(--pattern-size,40px))
+}
+
+.pattern-size-2 {
+    --pattern-size: 6px;
+    --pattern-size-half: calc(5px/2);
+}
+
+.pattern-blue-300 {
+    --pattern-color: #6cdcf3;
+}
+
+.pattern-gray {
+    --pattern-color: #3d3d3d51;
+}
+
+.pattern-bg-white {
+    --pattern-bg-color: #fff;
+}
+
+
